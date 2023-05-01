@@ -28,7 +28,7 @@ spec:
     spec:
       project: demo
       source:
-        repoURL: https://github.com/dhpup/helm-demo.git
+        repoURL: https://github.com/dhpup/helm-demo-v2.git
         targetRevision: HEAD
         path: 'env/{{values.path}}'
       destination:
