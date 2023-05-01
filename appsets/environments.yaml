@@ -13,7 +13,7 @@ spec:
   - clusters:
       selector:
         matchLabels:
-          prod: 'true'
+          stage: 'true'
       values:
         path: stage
   - clusters:
