@@ -5,8 +5,3 @@ metadata:
   name: stage-metrics-server
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
-
-spec:
-    spec:
-      containers:
-          image: 'registry.k8s.io/metrics-server/metrics-server:v0.6.2d'
