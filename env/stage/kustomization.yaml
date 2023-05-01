@@ -5,10 +5,10 @@ namePrefix: stage-
 
 helmCharts:
 - name: kubernetes-dashboard
-  repo: https://charts.bitnami.com/bitnami
+  repo: https://kubernetes.github.io/dashboard/
   includeCRDs: true
   valuesFile: values.yaml
   version: 6.0.7
 
-patches:
-- path: deletesvc.yaml
+#patches:
+#- path: deletesvc.yaml
