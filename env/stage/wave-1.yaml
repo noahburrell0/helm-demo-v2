@@ -1,6 +1,7 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-name: metrics-server
+$patch: merge
+apiVersion: argoproj.io/v1beta1
+kind: Deployment
 metadata:
+  name: stage-metrics-server
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
