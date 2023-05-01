@@ -2,7 +2,7 @@ metrics-server:
   enabled: true
 rbac:
   create: true
-  clusterReadOnlyRole: true
+  clusterReadOnlyRole: false
 extraArgs:
   - --enable-skip-login
   - --enable-insecure-login
