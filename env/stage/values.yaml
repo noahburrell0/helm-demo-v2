@@ -7,3 +7,4 @@ rbac:
 extraArgs:
   - --enable-skip-login
   - --enable-insecure-login
+  - --namespace=kd-stage
