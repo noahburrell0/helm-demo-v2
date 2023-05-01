@@ -19,3 +19,8 @@ patches:
 - path: wave-2.yaml
   target:
     name: stage-metrics-server
+
+patches:
+- path: wave-3.yaml
+  target:
+    name: stage-kubernetes-dashboard
