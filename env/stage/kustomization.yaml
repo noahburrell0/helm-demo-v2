@@ -10,6 +10,7 @@ helmCharts:
   valuesFile: values.yaml
   version: 6.0.7
   releaseName: stage 
+  namespace: kd-stage
 
 #patches:
 #- path: deletesvc.yaml
