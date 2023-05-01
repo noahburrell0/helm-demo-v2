@@ -1,6 +1,9 @@
-replicaCount: 1
-
-resources:
-  limits:
-    cpu: 300m
-
+metrics-server:
+  enabled: true
+rbac:
+  create: true
+#  clusterReadOnlyRole: false
+extraArgs:
+  - --enable-skip-login
+  - --enable-insecure-login
+  - --namespace=kd-dev
