@@ -1,7 +1,7 @@
 $patch: merge
 apiVersion: argoproj.io/v1beta1
-kind: Deployment
+kind: ServiceAccount
 metadata:
-  name: stage-metrics-server
+  name: serviceaccount
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
