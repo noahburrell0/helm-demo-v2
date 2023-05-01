@@ -10,5 +10,5 @@ helmCharts:
   releaseName: stage 
   namespace: kd-stage
 
-#patches:
-#- path: deletesvc.yaml
+patches:
+- path: wave-1.yaml
