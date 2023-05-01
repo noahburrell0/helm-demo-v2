@@ -4,4 +4,4 @@ kind: Deployment
 metadata:
   name: stage-metrics-server
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "2"
