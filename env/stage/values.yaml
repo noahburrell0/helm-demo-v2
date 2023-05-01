@@ -2,7 +2,6 @@ metrics-server:
   enabled: true
 rbac:
   create: true
-rbac:
   clusterReadOnlyRole: true 
   clusterAdminRole: false
 extraArgs:
