@@ -14,7 +14,7 @@ jobs:
         name: Checkout
         uses: actions/checkout@v3
         with:
-          path: main
+          ref: main
           # fetch-depth: 0 needed for `git rev-list --count` to work properly
           # fetch-depth: 0
       -
