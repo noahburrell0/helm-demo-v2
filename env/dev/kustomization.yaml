@@ -16,7 +16,12 @@ patches:
     target:
       name: dev-kubernetes-dashboard
   - target:
-      kind: CustomResourceDefinition
+      kind: APIService
+    patch: |- 
+      - op: remove
+        path: /metadata/labels/app.kubernetes.io~1instance
+  - target:
+      kind: ClusterRole
     patch: |- 
       - op: remove
         path: /metadata/labels/app.kubernetes.io~1instance
