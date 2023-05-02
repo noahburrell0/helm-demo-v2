@@ -16,9 +16,10 @@ jobs:
         with:
           # fetch-depth: 0 needed for `git rev-list --count` to work properly
           fetch-depth: 0
-      - 
+      -
+        uses: mikefarah/yq@master 
+      -
         name: yq
-        uses: mikefarah/yq@master
         run: |
           cd env/dev
           yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = "${GITHUB_REF_NAME:1}"' kustomization.yaml
@@ -31,9 +32,10 @@ jobs:
         uses: jakejarvis/wait-action@master
         with:
           time: '10s'
-      - 
+      -
+        uses: mikefarah/yq@master 
+      -
         name: yq
-        uses: mikefarah/yq@master
         run: |
           cd env/stage
           yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = "${GITHUB_REF_NAME:1}"' kustomization.yaml
@@ -47,8 +49,9 @@ jobs:
         with:
           time: '10s'
       - 
+        uses: mikefarah/yq@master 
+      -
         name: yq
-        uses: mikefarah/yq@master
         run: |
           cd env/prod
           yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = "${GITHUB_REF_NAME:1}"' kustomization.yaml
