@@ -8,5 +8,10 @@ helmCharts:
     version: 6.4.6
     releaseName: dev
     namespace: kd-dev
-#patches:
-#- path: deletesvc.yaml
+patches:
+  - path: wave-1.yaml
+    target:
+      name: stage-metrics-server
+  - path: wave-2.yaml
+    target:
+      name: stage-kubernetes-dashboard
