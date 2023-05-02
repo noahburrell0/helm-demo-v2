@@ -28,7 +28,8 @@ jobs:
           git add .
           git commit -m "Set kubernetes-dashboard helm version to ${GITHUB_REF_NAME:1}"
           git push
-      - name: Sleep for 10 seconds
+      - 
+        name: Sleep for 10 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '10s'
@@ -44,7 +45,8 @@ jobs:
           git add .
           git commit -m "Set kubernetes-dashboard helm version to ${GITHUB_REF_NAME:1}"
           git push
-      - name: Sleep for 10 seconds
+      - 
+        name: Sleep for 10 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '10s'
