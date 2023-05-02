@@ -23,7 +23,7 @@ jobs:
         name: yq
         run: |
           cd env/dev
-          yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = ${GITHUB_REF_NAME:1}' kustomization.yaml
+          yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = env(GITHUB_REF_NAME:1)' kustomization.yaml
           git config --global user.name "Commit Bot"
           git config --global user.email "no-reply@akuity.io"
           git add .
@@ -42,7 +42,7 @@ jobs:
         name: yq
         run: |
           cd env/stage
-          yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = ${GITHUB_REF_NAME:1}' kustomization.yaml
+          yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = env(GITHUB_REF_NAME:1)' kustomization.yaml
           git config --global user.name "Commit Bot"
           git config --global user.email "no-reply@akuity.io"
           git add .
@@ -59,7 +59,7 @@ jobs:
         name: yq
         run: |
           cd env/prod
-          yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = ${GITHUB_REF_NAME:1}' kustomization.yaml
+          yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = env(GITHUB_REF_NAME:1)' kustomization.yaml
           git config --global user.name "Commit Bot"
           git config --global user.email "no-reply@akuity.io"
           git add .
