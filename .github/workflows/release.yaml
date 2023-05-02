@@ -1,0 +1,59 @@
+name: Release
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Checkout
+        uses: actions/checkout@v3
+        with:
+          # fetch-depth: 0 needed for `git rev-list --count` to work properly
+          fetch-depth: 0
+      - 
+        name: yq
+        uses: mikefarah/yq@master
+        run: |
+          cd env/dev
+          yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = "${GITHUB_REF_NAME:1}"' kustomization.yaml
+          git config --global user.name "Commit Bot"
+          git config --global user.email "no-reply@akuity.io"
+          git add .
+          git commit -m "Set kubernetes-dashboard helm version to ${GITHUB_REF_NAME:1}"
+          git push
+      - name: Sleep for 10 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '10s'
+      - 
+        name: yq
+        uses: mikefarah/yq@master
+        run: |
+          cd env/stage
+          yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = "${GITHUB_REF_NAME:1}"' kustomization.yaml
+          git config --global user.name "Commit Bot"
+          git config --global user.email "no-reply@akuity.io"
+          git add .
+          git commit -m "Set kubernetes-dashboard helm version to ${GITHUB_REF_NAME:1}"
+          git push
+      - name: Sleep for 10 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '10s'
+      - 
+        name: yq
+        uses: mikefarah/yq@master
+        run: |
+          cd env/prod
+          yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = "${GITHUB_REF_NAME:1}"' kustomization.yaml
+          git config --global user.name "Commit Bot"
+          git config --global user.email "no-reply@akuity.io"
+          git add .
+          git commit -m "Set kubernetes-dashboard helm version to ${GITHUB_REF_NAME:1}"
+          git push
