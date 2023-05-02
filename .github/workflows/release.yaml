@@ -27,8 +27,7 @@ jobs:
           git config --global user.email "no-reply@akuity.io"
           git add .
           git commit -m "Set kubernetes-dashboard helm version to ${GITHUB_REF_NAME:1}"
-          git checkout main
-          git push
+          git push origin HEAD:main
       - 
         name: Sleep for 10 seconds
         uses: jakejarvis/wait-action@master
@@ -45,7 +44,6 @@ jobs:
           git config --global user.email "no-reply@akuity.io"
           git add .
           git commit -m "Set kubernetes-dashboard helm version to ${GITHUB_REF_NAME:1}"
-          git checkout main
           git push
       - 
         name: Sleep for 10 seconds
@@ -63,5 +61,4 @@ jobs:
           git config --global user.email "no-reply@akuity.io"
           git add .
           git commit -m "Set kubernetes-dashboard helm version to ${GITHUB_REF_NAME:1}"
-          git checkout main
           git push
