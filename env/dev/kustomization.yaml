@@ -15,13 +15,3 @@ patches:
   - path: wave-2.yaml
     target:
       name: dev-kubernetes-dashboard
-  - target:
-      kind: APIService
-    patch: |- 
-      - op: remove
-        path: /metadata/labels/app.kubernetes.io~1instance
-  - target:
-      kind: ClusterRole
-    patch: |- 
-      - op: remove
-        path: /metadata/labels/app.kubernetes.io~1instance
