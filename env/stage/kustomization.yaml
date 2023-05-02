@@ -11,10 +11,7 @@ helmCharts:
 patches:
   - path: wave-1.yaml
     target:
-      kind: ServiceAccount
-  - path: wave-2.yaml
-    target:
       name: stage-metrics-server
-  - path: wave-3.yaml
+  - path: wave-2.yaml
     target:
       name: stage-kubernetes-dashboard
