@@ -11,7 +11,7 @@ helmCharts:
 patches:
   - path: wave-1.yaml
     target:
-      name: stage-metrics-server
+      name: dev-metrics-server
   - path: wave-2.yaml
     target:
-      name: stage-kubernetes-dashboard
+      name: dev-kubernetes-dashboard
