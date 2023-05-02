@@ -12,11 +12,9 @@ patches:
   - path: wave-1.yaml
     target:
       kind: ServiceAccount
-patches:
   - path: wave-2.yaml
     target:
       name: stage-metrics-server
-patches:
   - path: wave-3.yaml
     target:
       name: stage-kubernetes-dashboard
