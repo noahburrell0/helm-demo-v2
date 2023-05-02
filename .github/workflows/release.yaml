@@ -13,7 +13,8 @@ jobs:
       - 
         name: Checkout
         uses: actions/checkout@v3
-        #with:
+        with:
+          path: main
           # fetch-depth: 0 needed for `git rev-list --count` to work properly
           # fetch-depth: 0
       -
@@ -21,7 +22,6 @@ jobs:
       -
         name: yq
         run: |
-          git checkout main
           cd env/dev
           yq -i '(.helmCharts[] | select(.name == "kubernetes-dashboard").version) = "${GITHUB_REF_NAME:1}"' kustomization.yaml
           git config --global user.name "Commit Bot"
