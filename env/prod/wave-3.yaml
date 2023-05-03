@@ -1,0 +1,7 @@
+$patch: merge
+apiVersion: argoproj.io/v1beta1
+kind: APIService
+metadata:
+  name: v1beta1.metrics.k8s.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
