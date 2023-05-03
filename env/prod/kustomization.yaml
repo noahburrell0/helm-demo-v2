@@ -18,3 +18,6 @@ patches:
   - path: wave-3.yaml
     target:
       name: v1beta1.metrics.k8s.io
+  - path: wave-4.yaml
+    target:
+      name: kubernetes-dashboard-key-holder
