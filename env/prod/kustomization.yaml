@@ -15,6 +15,6 @@ patches:
   - path: wave-2.yaml
     target:
       name: prod-kubernetes-dashboard
-  - path: wave-2.yaml
+  - path: wave-3.yaml
     target:
       name: v1beta1.metrics.k8s.io
