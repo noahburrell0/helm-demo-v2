@@ -9,9 +9,6 @@ helmCharts:
     releaseName: prod
     namespace: kd-prod
 patches:
-  - path: wave-0.yaml
-    target:
-      name: kubernetes-dashboard-key-holder
   - path: wave-1.yaml
     target:
       name: prod-metrics-server
