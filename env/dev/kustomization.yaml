@@ -5,7 +5,7 @@ helmCharts:
     repo: https://kubernetes.github.io/dashboard/
     includeCRDs: true
     valuesFile: values.yaml
-    version: 6.0.6
+    version: 6.0.7
     releaseName: dev
     namespace: kd-dev
 patches:
