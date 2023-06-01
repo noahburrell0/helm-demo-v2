@@ -34,8 +34,8 @@ spec:
       destination:
         server: '{{server}}'
         namespace: 'kd-{{values.path}}'
-      # syncPolicy:
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
       #   automated:
           # prune: true
-        # syncOptions:
-        # - CreateNamespace=true
