@@ -8,4 +8,4 @@ extraArgs:
   - --enable-insecure-login
   - --namespace=kd-dev
 service:
-  type: ClusterIP
+  type: LoadBalancer
