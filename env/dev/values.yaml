@@ -6,4 +6,5 @@ rbac:
 extraArgs:
   - --enable-skip-login
   - --enable-insecure-login
+  - --enable-helm
   - --namespace=kd-dev
