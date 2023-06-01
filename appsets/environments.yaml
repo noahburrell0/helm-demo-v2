@@ -26,10 +26,10 @@ spec:
     metadata:
       name: 'kd-{{values.path}}-{{name}}'
     spec:
-      project: demo
+      project: default
       source:
-        repoURL: https://github.com/dhpup/helm-demo-v2.git
-        targetRevision: HEAD
+        repoURL: https://github.com/noahburrell0/helm-demo-v2.git
+        targetRevision: main
         path: 'env/{{values.path}}'
       destination:
         server: '{{server}}'
